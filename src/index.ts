@@ -6,6 +6,7 @@ import { connectDB } from "./config/db";
 import {GetAllCategories, SaveUserCategoryPreferences} from './products'
 
 dotenv.config();
+const PORT = process.env.PORT || "50052";
 
 const PROTO_PATH = path.join(__dirname, "../proto/products.proto");
 
@@ -32,11 +33,11 @@ const start = async () => {
   await connectDB();
 
   server.bindAsync(
-    "0.0.0.0:50052",
+    `0.0.0.0:${PORT}`,
     grpc.ServerCredentials.createInsecure(),
     (err, port) => {
       if (err) throw err;
-      console.log(`productService running on port ${port}`);
+      console.log(`productService running on port ${PORT}`);
     }
   );
 };
