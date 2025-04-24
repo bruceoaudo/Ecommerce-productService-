@@ -4,9 +4,9 @@ interface IProduct extends Document {
   name: string;
   price: number;
   category: Types.ObjectId;
-    imageURL: string;
-    slug: string;
-    description: string;
+  imageURL: string;
+  slug: string;
+  description: string;
 }
 
 const productSchema = new Schema<IProduct>(
@@ -14,7 +14,6 @@ const productSchema = new Schema<IProduct>(
     name: {
       type: String,
       required: [true, "Product name is required"],
-      trim: true,
     },
     price: {
       type: Number,

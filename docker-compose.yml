@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
-  product-service:
-    build: .
-    container_name: product-service
-    ports:
-      - "${PORT}:${PORT}"
-    environment:
-      - MONGO_URI=${MONGO_URI}
-    depends_on:
-      - product-mongo
+  # product-service:
+    #build: .
+    #container_name: product-service
+    #ports:
+    #  - "${PORT}:${PORT}"
+    #environment:
+    #  - MONGO_URI=${MONGO_URI}
+    #depends_on:
+    #  - product-mongo
 
   product-mongo:
     image: mongo:6

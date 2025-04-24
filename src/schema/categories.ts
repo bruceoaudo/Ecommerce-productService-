@@ -5,8 +5,6 @@ interface ICategory extends Document {
   description: string;
   slug: string;
   products: Types.ObjectId[];
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 const categorySchema = new Schema<ICategory>(
